@@ -258,7 +258,7 @@ def compute_inference_time(data) -> float:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--eval_file_path", required=True, help="Enter the path to your eval file contatining all trajectories.")
+    parser.add_argument("--trajectory_jsonl_path", required=True, help="Enter the path to your eval file contatining all trajectories.")
 
     args = parser.parse_args()
 
@@ -266,7 +266,7 @@ if __name__ == "__main__":
 
     all_data = []
 
-    with open(args.eval_file_path, "r") as f:
+    with open(args.trajectory_jsonl_path, "r") as f:
         for line in f:
             data = json.loads(line)
             all_data.append(data)
